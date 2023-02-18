@@ -1,0 +1,126 @@
+.post {
+    min-width: 320px;
+    width: 50%;
+    height: auto;
+    margin: .25rem 0;
+    border-radius: 1rem;
+    background: rgb(var(--white));
+    box-shadow: var(--shadow);
+}
+
+.post:first-child {
+    margin-top: 0;
+}
+
+.post__header {
+    padding: 1.25rem 1.25rem 0.25rem;
+    border-bottom: none;
+    width: 100%;
+    display: flex;
+}
+
+.post__profile-picture {
+    overflow: hidden;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: grey;
+    border-radius: 50%;
+}
+
+.post__info {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.post__date {
+    font-size: 0.75rem;
+    color: grey;
+}
+
+.post__content {
+    text-align: justify;
+    width: 100%;
+    padding: 0 1.25rem;
+    border-top: none;
+    border-bottom: none;
+}
+
+.post__text {
+    width: 100%;
+    word-break: break-word;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+.post__comments {
+    width: 100%;
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.post__input {
+    position: relative;
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 1rem 0 0 1rem;
+    border: 1px solid rgb(var(--grey));
+    outline: none;
+    max-width: 600px;
+    width: calc(100% - 2.75rem);
+    min-height: 2.5rem;
+    resize: none;
+    word-wrap: break-word;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.post__input:empty::before {
+    content: attr(data-placeholder);
+}
+
+.post__input::before {
+    content: "";
+    position: absolute;
+}
+
+.post__pictures {
+    width: 100%;
+    height: auto;
+}
+
+.post__comments__input {
+    display: flex;
+    align-items: flex-end;
+}
+
+.post__button {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: .25rem;
+    border-radius: 0 1rem 1rem 0;
+    outline: none;
+    border: none;
+    background: rgb(var(--white));
+    border: 1px solid rgb(var(--grey));
+    cursor: pointer;
+}
+
+.post__button:hover {
+    background: rgb(var(--grey));
+}
+
+.post__button-comments {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.post__button-comments:hover {
+    color: rgba(var(--black),0.8);
+}

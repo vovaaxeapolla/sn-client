@@ -1,0 +1,12 @@
+.comment__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment__text{
+    font-size: .75rem;
+    width: 100%;
+    word-break: normal;
+    word-wrap: break-word;
+}
