@@ -1,0 +1,111 @@
+.Slider
+
+    &__current
+        width: 100%
+        aspect-ratio: 1/1
+        border-radius: 0.5rem
+        position: relative
+        border-radius: var(--br-large)
+        overflow: hidden
+
+        img
+            width: 100%
+            object-fit: contain
+            aspect-ratio: 1/1
+            position: relative
+            z-index: 100
+
+        &__background
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 1
+            width: 100%
+            height: 100%
+            filter: blur(20px)
+
+            img
+                width: 100%
+                object-fit: cover
+                aspect-ratio: 1/1
+                position: relative
+                z-index: 10
+
+    &__prev, &__middle, &__next
+        height: 100%
+        position: absolute
+        z-index: 1000
+        opacity: 0
+        transition: .2s
+        display: flex
+        align-items: center
+        justify-content: center
+        fill: var(--text-color)
+
+    &__prev:hover, &__middle:hover, &__next:hover
+        opacity: 1
+
+    &__prev, &__next
+        width: 15%
+
+    &__prev
+        left: 0
+        background: linear-gradient(to left,rgba(0,0,0,0),var(--bg))
+
+    &__middle
+        width: 70%
+        margin: 0 15%
+
+    &__next
+        right: 0
+        background: linear-gradient(to left,var(--bg),rgba(0,0,0,0))
+
+    &__fullsreen
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        position: fixed
+        z-index: 10000
+        background: rgba(0,0,0,.3)
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        visibility: hidden
+        opacity: 0
+        transition: .2s
+
+        &-opened
+            opacity: 1
+            visibility: visible
+
+        img
+            height: 90%
+            object-fit: contain
+
+    &__container
+        width: 100%
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        gap: .5rem
+        padding: .5rem
+        overflow-y: hidden
+
+    &__image
+        border-radius: var(--br-large)
+        transition: .2s
+        overflow: hidden
+        aspect-ratio: 1/1
+        min-height: 3rem
+        min-width: 3rem
+        flex: 1 1
+
+    &__slide
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    &__highlighter
+        outline: 2px solid var(--link-color)

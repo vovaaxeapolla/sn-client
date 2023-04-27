@@ -1,0 +1,23 @@
+.submit
+    cursor: pointer
+    border-radius: .5rem
+    background: var(--submit)
+    height: 2rem
+    width: 100%
+    max-width: 16rem
+    color: white
+
+    &:disabled
+        background: var(--disabled)
+        cursor: default
+
+    &:not(&:disabled):hover
+        background: var(--submit-hover)
+
+.round
+    border-radius: 50%
+
+.common
+    padding: .25rem
+    fill: var(--text-color)
+    background: var(--btn)

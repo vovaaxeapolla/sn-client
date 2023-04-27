@@ -1,28 +1,35 @@
 import './App.css';
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Suspense, useContext, lazy } from 'react';
 import { observer } from "mobx-react-lite"
+import Main from './components/Main/Main';
+import Auth from './pages/accounts/Auth/Auth';
+import { useContext, useEffect } from 'react';
 import { Context } from '.';
-import Auth from './pages/Auth/Auth';
 
-const Forum = lazy(() => import('./pages/Forum/Forum'));
-
-const App = observer(() => {
+const App = () => {
 
   const { userStore } = useContext(Context);
+  useEffect(() => {
+    if (localStorage.getItem('accessToken')) {
+      userStore.checkAuth();
+      setInterval(() => userStore.checkAuth(), 30 * 60 * 1000);
+    } else {
+      userStore.setLoading(false);
+    }
+  }, []);
 
   return (
     <div className="App">
-      <Suspense fallback="Loading...">
-        <Routes>
-          <Route path='/' element={userStore.auth ? <Navigate to="/forum/posts" /> : <Navigate to="/auth" />} />
-          <Route path='/forum' element={userStore.auth ? <Navigate to="/forum/posts" /> : <Navigate to="/auth" />} />
-          <Route path='/forum/*' element={userStore.auth ? <Forum /> : <Navigate to="/auth" />} />
-          <Route path='/auth' element={<Auth />} />
-        </Routes>
-      </Suspense>
-    </div>
+      {
+        userStore.isLoading
+          ?
+          "Loader"
+          :
+          userStore.isAuth
+            ? < Main />
+            : < Auth />
+      }
+    </div >
   );
-})
+}
 
-export default App;
+export default observer(App);

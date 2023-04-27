@@ -1,14 +1,19 @@
-import { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import User from './store/user';
+import UserStore from './stores/UserStore';
+import { createContext } from 'react';
 
-const userStore = new User();
-userStore.checkAuth();
+const userStore = new UserStore();
 
-export const Context = createContext({ userStore });
+interface IStore {
+  userStore: UserStore
+}
+
+export const Context = createContext<IStore>({
+  userStore,
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

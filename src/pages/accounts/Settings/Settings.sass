@@ -1,0 +1,81 @@
+.Settings
+    width: 100%
+    height: 100%
+    background: var(--body-bg)
+    display: flex
+    color: var(--text-color)
+    fill: var(--text-color)
+    overflow: auto
+    background: var(--bg)
+    border-radius: var(--br-medium)
+
+    &__container
+        padding: 1.5rem
+        display: flex
+        align-items: center
+        flex-direction: column
+        width: 80%
+
+        @media screen and (max-width: 500px)
+            width: 100%
+
+    &__form
+        display: flex
+        align-items: center
+        flex-direction: column
+        margin-bottom: 1rem
+        gap: 2rem
+        width: 100%
+        max-width: 32rem
+
+    &__navbar
+        width: 20%
+        min-width: 10rem
+        border-right: 1px solid var(--border-color)
+        & button:first-child
+            display: none
+        @media screen and (max-width: 500px)
+            position: fixed
+            left: 0
+            top: 0
+            background: var(--bg)
+            width: 100%
+            height: 100%
+            z-index: 100
+            transition: .2s
+            & button:first-child
+                display: block
+            &-closed
+                transform: translateX(100%)
+
+        &__link
+            display: block
+            width: 100%
+            color: var(--text-color)
+            padding: .5rem
+            text-align: center
+            line-height: 2rem
+            border-radius: var(--br-medium) 0 0 var(--br-medium)
+            height: 3rem
+            position: relative
+            transition: .2s
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+
+            &-active
+                &::before
+                    content: ''
+                    width: 4px
+                    position: absolute
+                    right: 0
+                    top: 0
+                    bottom: 0
+                    border-radius: 2px
+                    background: var(--text-color)
+
+            &:hover
+                background: var(--bg-hover)
+    &__error
+        font-size: 0.75rem
+        color: var(--error)

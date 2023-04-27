@@ -1,32 +1,101 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  background: var(--bg);
+}
 
+html {
+  font-size: 16px;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-a{
-  text-decoration: none;
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  font-family: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
-  --white: 255, 255, 255;
-  --black: 40, 30, 34;
-  --green: 116, 129, 89;
-  --grey: 199, 199, 203;
-  --brown: 196, 182, 144;
-  --darker-white: 223, 220, 213;
-  --shadow: 0 0 .125rem 0 rgba(var(--black),.08);
+  --header-height: 4rem;
+  --navbar-width: 14rem;
+  --lightgrey: #999;
+  --br-small: .25rem;
+  --br-medium: .5rem;
+  --br-large: 1rem;
+}
+
+html[theme="light"]:root {
+  --navbar: #fff;
+  --body-bg: #e5e5e5;
+  --bg: #fff;
+  --bg-hover: #eee;
+  --border-color: #ccc;
+  --error: #ff3e3e;
+  --link-color: #3e97d7;
+  --add-color: #3e97d7;
+  --text-color: #111;
+  --submit: #3e97d7;
+  --submit-hover: #2e71a1;
+  --btn: #ddd;
+  --btn-highlight: rgb(0, 0, 0, .08);
+  --btn-highlight-hover: rgba(79, 79, 79, .08);
+  --scroll-bg: #ddd;
+  --scroll-thumb: #333;
+  --disabled: #ddd;
+
+}
+
+html[theme="dark"]:root {
+  --navbar: #222;
+  --body-bg: #111;
+  --bg: #222;
+  --bg-hover: #353535;
+  --border-color: #555;
+  --error: #ff3e3e;
+  --text-color: #eee;
+  --add-color: #d73ed7;
+  --link-color: #d73ed7;
+  --submit: #d73ed7;
+  --submit-hover: #9b2ea1;
+  --btn: #555;
+  --btn-highlight: rgb(225, 225, 225, .08);
+  --btn-highlight-hover: rgba(180, 180, 180, .08);
+  --scroll-bg: rgb(225, 225, 225, .1);
+  --scroll-thumb: #eee;
+  --disabled: #3a3a3a;
 }
