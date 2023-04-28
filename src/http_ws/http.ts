@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const API_URL = 'http://localhost:5000/api';
-export const IMAGES_URL = 'http://localhost:5000/images';
-
+export const API_URL = process.env.REACT_APP_API_URL;
+export const IMAGES_URL = process.env.REACT_APP_IMAGES_URL;
+console.log(process.env.REACT_APP_API_URL);
 const api = axios.create({
     withCredentials: true,
     baseURL: API_URL
