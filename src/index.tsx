@@ -1,27 +1,12 @@
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from "react-router-dom";
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import UserStore from './stores/UserStore';
-import { createContext } from 'react';
 
-const userStore = new UserStore();
-
-interface IStore {
-  userStore: UserStore
-}
-
-export const Context = createContext<IStore>({
-  userStore,
-});
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(
-  <Context.Provider value={{ userStore }}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Context.Provider>
+    // <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    // </React.StrictMode>
 );

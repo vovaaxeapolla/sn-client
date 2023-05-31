@@ -1,0 +1,19 @@
+.line {
+    width: 100%;
+    display: inline-block;
+    text-align: justify;
+    word-break: break-all;
+    max-height: var(--console-fontSize);
+    font-size: var(--console-fontSize);
+    line-height: var(--console-fontSize);
+    white-space: pre-wrap;
+}
+
+.default {
+    text-shadow: var(--console-text-color) 0 0 5px;
+}
+
+.break {
+    overflow: hidden;
+    white-space: nowrap;
+}

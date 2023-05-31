@@ -1,0 +1,122 @@
+
+.link{
+    color: var(--console-link-color);
+    border-bottom: 1px dotted var(--console-link-color);
+    text-decoration: none;
+}
+
+.link:hover{
+    color: var(--console-link-color-hover);
+    border-bottom: 1px dotted var(--console-link-color-hover);
+    text-decoration: none;
+}
+
+.console{
+    grid-area: console;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    max-height: 100%;
+    color: var(--console-text-color);
+    background: center/cover no-repeat var(--console-bg);
+    font-size: var(--console-fontSize);
+    letter-spacing: 0px;
+    font-family: monospace;
+    font-weight: 100;
+    padding: 0 16px 0 var(--console-padding);
+}
+
+.console::-webkit-scrollbar{
+    width: 6px;
+}
+
+.console::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.console::-webkit-scrollbar-thumb {
+    background-color: var(--console-scroll-color);
+    border: 2px solid transparent;
+    border-radius: 3px;
+  }
+
+.console-screen{
+    width: 100%;
+}
+
+.console-inputline{
+    width: 100%;
+    display: flex;
+}
+
+.console-input{
+    display: inline-block;
+    margin: 10px 0;
+    height: 18px;
+    width: 100%;
+    outline: none;
+    border: none;
+    resize: none;
+    background: transparent;
+    color: var(--console-text-color);
+    font-size: var(--console-fontSize);
+    font-family: monospace;
+    text-align: justify; 
+    cursor: default;
+}
+
+.console-canvas{
+    position: absolute;
+    z-index: 0;
+}
+
+.unselectable {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+.dyer-purple{
+    color: #855cc4;
+    text-shadow: #855cc4 0 0 5px;
+}
+.dyer-cyan{
+    color: #7dfbfa;
+    text-shadow: #7dfbfa 0 0 5px;
+}
+.dyer-red{
+    color: #ff6347;
+    text-shadow: #ff6347 0 0 5px;
+}
+.dyer-yellow{
+    color: #f8d225;
+    text-shadow: #f8d225 0 0 5px;
+}
+.dyer-pink-gradient-1{
+    color: #fff0f5;
+}
+.dyer-pink-gradient-2{
+    color: #ffbdd3;
+}
+.dyer-pink-gradient-3{
+    color: #ff8ab1;
+}
+.dyer-pink-gradient-4{
+    color: #ff578f;
+}
+.dyer-pink-gradient-5{
+    color: #ff246d;
+}
+.dyer-pink-gradient-6{
+    color: #f00050;
+}
+.dyer-orange-gradient-1{
+    color: #FFBB73;
+}
+.dyer-orange-gradient-2{
+    color: #FFA240;
+}
+.dyer-orange-gradient-3{
+    color: #FF8300;
+}

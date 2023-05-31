@@ -1,35 +1,14 @@
-import './App.css';
-import { observer } from "mobx-react-lite"
-import Main from './components/Main/Main';
-import Auth from './pages/accounts/Auth/Auth';
-import { useContext, useEffect } from 'react';
-import { Context } from '.';
+import Console from "./components/Console/Console";
+import "./App.css";
+import { observer } from "mobx-react-lite";
+import { Routes, Route } from 'react-router-dom'
 
-const App = () => {
-
-  const { userStore } = useContext(Context);
-  useEffect(() => {
-    if (localStorage.getItem('accessToken')) {
-      userStore.checkAuth();
-      setInterval(() => userStore.checkAuth(), 30 * 60 * 1000);
-    } else {
-      userStore.setLoading(false);
-    }
-  }, []);
-
+const App = observer(() => {
   return (
-    <div className="App">
-      {
-        userStore.isLoading
-          ?
-          "Loader"
-          :
-          userStore.isAuth
-            ? < Main />
-            : < Auth />
-      }
-    </div >
+    <div className="app">
+      <Console />
+    </div>
   );
-}
+});
 
-export default observer(App);
+export default App;
